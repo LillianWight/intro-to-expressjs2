@@ -21,3 +21,8 @@ app.get("/4", (req, res) => {
   myHtml += "</h1></body></html>";
   res.send(myHtml);
 });
+
+app.get("/rulez", (req, res) => {
+  let rulez = "ExpressJS Rulez!!!";
+  res.send(rulez);
+});
