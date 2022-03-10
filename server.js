@@ -1,3 +1,4 @@
+const { response } = require("express");
 const express = require("express");
 const app = express();
 const PORT = 4000;
@@ -25,4 +26,14 @@ app.get("/4", (req, res) => {
 app.get("/rulez", (req, res) => {
   let rulez = "ExpressJS Rulez!!!";
   res.send(rulez);
+});
+
+app.get("/forest", (req, res) => {
+  let daylight = req.query.daylight;
+  let isDaylight = daylight === "true" || daylight === "'true";
+  if (isDaylight) {
+    res.send("You are in a deep, decently lit wood...");
+  } else {
+    res.send("You are in a deep, dark wood....");
+  }
 });
